@@ -87,6 +87,12 @@ class MainWindow(QMainWindow):
         
         input_layout.addRow("User Access Token:", token_layout)
         
+        # 添加获取Token的帮助链接
+        token_help_label = QLabel('<a href="https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document/list">获取User Access Token</a>')
+        token_help_label.setOpenExternalLinks(True)  # 允许打开外部链接
+        token_help_label.setStyleSheet("color: #0066cc; font-size: 12px;")
+        input_layout.addRow("", token_help_label)
+        
         # Document ID输入
         self.doc_id_entry = QLineEdit()
         input_layout.addRow("Document ID:", self.doc_id_entry)
